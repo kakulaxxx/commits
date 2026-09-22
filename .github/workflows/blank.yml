@@ -8,11 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Auto Commits
         run: |
           git config --global user.name "kakulaxxx"
-          git config --global user.email "your-email@example.com"
-          for i in {5..18}; do
+          git config --global user.email "kakulaxxx@users.noreply.github.com"
+          for i in {5..19}; do
             echo "Dòng $i" >> README.md
             git add README.md
             git commit -m "Add line $i to README"
